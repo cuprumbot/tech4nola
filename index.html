@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/img/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="assets/img/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/img/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/img/favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/img/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <!-- Visual -->
+    <link rel="stylesheet" href="assets/css/main.min.css">
+    <!--<link rel="stylesheet" href="assets/css/fa-all.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- Contenido -->
+    <script src="assets/js/staff.js" type="text/javascript"></script>
+    <script src="assets/js/events.js" type="text/javascript"></script>
+    <script src="assets/js/subjects.js" type="text/javascript"></script>
+    <script src="assets/js/config.js" type="text/javascript"></script>
+    <script src="assets/js/workshops.js" type="text/javascript"></script>
+
+    <!-- Funcionalidad -->
+    <script src="ghspa.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+
+    <title>Tech4Nola</title>
+
+</head>
+<body font-family="Product">
+    <span id="background" class="background">
+    </span>
+    <span class="title-container">
+        <span class="inner-container">
+            <span id="title-container" class="title-container no-select">
+                
+                <span class="title">
+                    <img id="innovation-logo" class="innovation-logo" src="" alt="">
+                </span>
+
+                <span class="title-menu">
+                    <a id="home-access" class="btn-menu c1">Acerca de</a>
+                    <a id="staff-access" class="btn-menu c2">Staff</a>
+                    <!-- <a id="agenda-access" class="btn-menu c3">Agenda</a> -->
+                    <a id="workshops-access" class="btn-menu c3">Workshops</a>
+                    <a id="calendar-access" class="btn-menu c4">Calendario</a>
+                </span>
+
+            </span>
+        </span>
+    </span>
+
+    <!-- Contenedor para listado de staff, listado de workshops, etc -->
+    <span id="dynamic-information" class="dynamic-information">
+        <span class="section-title">
+        </span>
+        <span class="section-body">   
+        </span>
+        <span class="section-calendar">
+            <p>
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FGuatemala&src=bHVpc2N1QGdhbGlsZW8uZWR1&src=Z2FsaWxlby5lZHVfM21tZmNsNzQ3a2xtcm5wcXNwbTAyZHZhb29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Z2FsaWxlby5lZHVfcjFqNXZyazd2a3RybHB0MjZsdHFsZW9ycTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Y181cm5vM2l2YjA2dWZzajZyZGczdGp2YWwxY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF&color=%234285F4&color=%23D81B60&color=%23795548" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </p>
+        </span>
+    </span>
+
+    <!-- Contenedor para detalles de staff, detalles de workshops, etc -->
+    <span id="dynamic-expanded-information" class="dynamic-expanded-information">
+        <span class="section-body">
+        </span>
+    </span>
+
+    <span id="galileo-logo" class="galileo-logo">        
+    </span>
+
+    <!-- Botón de retroceso -->
+    <span id="back-container" class="back-container">
+        <a id="back" class="btn-back">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </span>
+
+</body>
+</html>
+
+<script>
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var inIndex = true;
+    var staffExpanded = false;
+    var workshopExpanded = false;
+    var orderStaff = new Array();
+    var zIndexList = '4';
+    var zIndexDetails = '5';
+
+    var WIDTH_RESIZE = 850;
+    var logos = [];
+
+    /* Desplegar información de talleres */
+    function generateWorkshops(){
+        var correlative = 0;
+        var element = $('#dynamic-information');
+        element.find('.section-title').html('WORKSHOPS');
+        
+        var html = '';
+        html += '<span class="workshops-container">';
+        workshops.forEach(element => {                                  // para cada workshop
+            html += `<span id="${correlative}" class="workshop-card">`;
+            html += `<img src="assets/img/workshops/${element.image}">`;              // tarjeta con imagen de fondo
+            html += '<span class="workshop-info-container">';
+            html += '<span class="workshop-name">';                         // nombre
+            html += element.name;
+            html += '</span>';
+            html += '<span class="workshop-introduction">';                 // descripcion
+            html += element.introduction;
+            html += '</span>';
+            html += '</span>';
+            html += '<a class="btn-back">';                                 // iconos
+            html += '<i class="fas fa-arrow-up"></i>';
+            html += '</a>';
+            html += '<span class="workshop-duration"><i class="far fa-clock"></i>';
+            html += element.duration;                                       // duracion
+            html += '</span>';
+            html += '</span>';
+            correlative++;
+        });
+        html += `<span id="workshop-information" class="workshop-information">`;
+        html += '<p>';
+        html += '</p>';
+        html += '</span>';
+        html += '</span>';
+        element.find('.section-body').html(html);
+
+        // Click en la tarjeta de un taller
+        $('.workshop-card').click((event)=>{
+            element = event.currentTarget;
+            
+            if($(element).hasClass('expanded')){                        // si habia tarjeta expandida
+
+                workshopExpanded = false;
+
+                $(element).removeClass('expanded');                         // remover 'expanded'
+                $('#background').removeClass('unfocused');
+                
+                $('.workshop-card').each((index, workshop)=>{               // restaurar tarjetitas
+                    if(workshop.id != element.id){
+                        var actualWorkshop = $('#' + workshop.id);
+                        actualWorkshop.css('height', '150px');
+                        actualWorkshop.css('margin', '7.5px 15px');
+                    }else{
+                        var actualWorkshop = $('#' + workshop.id);
+                        actualWorkshop.find('.btn-back').html('<i class="fas fa-arrow-up"></i>');
+                    }
+                });
+                $('#workshop-information').removeClass('expanded');
+            
+            }else{
+                
+                workshopExpanded = true;
+
+                $(element).addClass('expanded');                        // agregar 'expanded' para que se vean los detalles
+                $('#background').addClass('unfocused');
+
+                $('.workshop-card').each((index, workshop)=>{               // hacer desaparecer demás tarjetas
+                    if(workshop.id != element.id){
+                        var actualWorkshop = $('#' + workshop.id);
+                        actualWorkshop.css('height', '0');
+                        actualWorkshop.css('margin', '0 15px');
+                    }else{
+                        var actualWorkshop = $('#' + workshop.id);
+                        actualWorkshop.find('.btn-back').html('<i class="fas fa-plus"></i>');
+                    }
+                });
+
+                html = '';                    
+                workshops[element.id].information.forEach((element)=>{      // generar información del taller
+                    html += '<p>';
+                    html += element;
+                    html += '</p>';
+                });
+                html += '<p>';
+                html += '<i class="fas fa-tools"></i>';
+                html += workshops[element.id].tools;
+                html += '</p>';
+
+                var findedStaff;
+                staff.forEach((staffMember)=>{
+                    if(staffMember.name == workshops[element.id].contact){      // buscar en staff al encargado del taller
+                        // Mail
+                        html += '<p>';
+                        html += '<i class="far fa-envelope"></i>';
+                        html += staffMember.email;
+                        findedStaff = staffMember;
+                        html += '</p>';
+
+                        // Foto y nombre
+                        html += '<span class="staff">';
+                        html += '<span class="staff-image">';
+                        html += `<img src="assets/img/conf/${findedStaff.image}">`;
+                        html += '</span>';
+                        html += '<span class="staff-name">';
+                        html += findedStaff.name;
+                        html += '</span>';
+                        html += '</span>';
+                    }
+                });
+
+                if (workshops[element.id].syllabus != null) {
+
+                    html += '<div class="syllabus-table-container">';
+                    html += '<table class="syllabus-table">';
+                    workshops[element.id].syllabus.forEach((element)=>{      // generar información del taller
+                        html += '<tr><td>';
+                        html += element;
+                        html += '</td></tr>';
+                    });
+                    html += '</table>';
+                    html + '</div>';
+                }
+                
+                $('#workshop-information').html(html);
+                $('#workshop-information').addClass('expanded');
+            
+            }
+
+            window.scroll({
+                top: 0, 
+                left: 0, 
+                behavior: 'smooth'
+            });
+        });
+
+        element.css('opacity', '1');
+        element.css('transform', 'translateY(0)');
+        element.css('z-index', zIndexList);
+    }
+
+    /* Muestra calendario */
+    // TO DO (Luis): Mejoras visuales
+    function generateCalendar(){
+        var element = $('#dynamic-information');
+        element.find('.section-title').html('CALENDARIO');
+        
+        element.css('opacity', '1');
+        element.css('transform', 'translateY(0)');
+        element.css('z-index', zIndexList);
+
+        var elementC = $('#dynamic-information .section-calendar');
+        elementC.css('opacity', '1');
+        elementC.css('transform', 'translateY(0)');
+        elementC.css('z-index', zIndexList);
+        elementC.css('display', 'block');
+    }
+
+    /* Muestra información principal */
+    function generateHome(){
+        var element = $('#dynamic-information');
+        element.find('.section-title').html('');
+
+        var html = '';
+
+            html += '<img src="assets/img/header-img.png">';
+
+            html += '<p>';
+            html += 'Tech4Nola es un proyecto nuevo.<br><br>';
+            html += 'La información del proyecto pronto aparecerá aquí. Aquí podrás ver la información del proyecto. Si quieres informarte sobre el proyecto, podrás hacerlo aquí.<br><br>';
+            html += 'Esta será la página informativa';
+            html += '</p></span>';
+
+            html += '<span class="subtitle">';
+            html += 'Más información';
+            html += '</span>';
+
+            html += '<p>';
+            html += '<b><font size="3">Detalles importantes</font></b><br>';
+            html += 'Información colocada como bloque.<br>';
+            html += 'Bloque compacto de información.<br>';
+            html += 'Información.<br><br>';
+
+            html += '<b><font size="3">Otros detalles</font></b><br>';
+            html += 'Aquí podrás conocer todo lo relacionado al proyecto.<br>';
+            html += 'El proyecto se llama Tech4Nola.<br>';
+            html += '</p>';
+        
+        element.find('.section-body').html(html);
+        element.css('opacity', '1');
+        element.css('transform', 'translateY(0)');
+        element.css('z-index', zIndexList);
+    }
+
+    /* Muestra información detallada de un curso o taller */
+    // TO DO (Luis)
+    function generateExpandedWorkshop() {
+
+    }
+
+    /* Muestra información detallada de un miembro del staff */
+    function generateExpandedStaff(img_path, name){
+        // Estamos en vista expandida? Para controlar funcionalidad del retroceso
+        staffExpanded = true;
+
+        // Se tiene nombre, obtener información completa
+        var findedStaff;
+        staff.forEach((staffMember)=>{
+            if(staffMember.name == name){
+                findedStaff = staffMember;
+            }
+        });
+
+        var element = $('#dynamic-expanded-information');
+        var html = '';
+
+        html += '<span class="staff-expanded-card">';
+        html += '<span class="staff-image">';
+        html += (img_path == undefined)? '' : `<img class="img" src="${img_path}">`;
+        html += '</span>';
+
+        html += '<span class="staff-name">';
+
+        // Bandera según nacionalidad
+        if (findedStaff.nationality != "empty" && findedStaff.nationality != "") {
+            html += `<span class="staff-flag"><img src="assets/img/paises/${findedStaff.nationality}.png"></span>`;
+        }
+
+        html += name;
+        html += '</span>';
+
+        // Info
+        //html += `<span class="staff-company">${findedStaff.company}</span>`;
+        html += `<span class="staff-information">${findedStaff.information}</span>`;
+
+        html += '</span>';
+        html += '</span>';
+
+        element.find('.section-body').html(html);
+
+        setTimeout(()=>{
+            $('#dynamic-information').css('display', 'none');
+        }, 300);
+        $('#dynamic-expanded-information').css('width', '100vw');
+        $('#dynamic-expanded-information').css('height', '100vh');
+        $('#dynamic-expanded-information').css('opacity', '1');
+        $('#dynamic-expanded-information').css('z-index', zIndexDetails);
+    }
+
+    /* Ocultar información expandida */
+    function hideExpanded(){
+        staffExpanded = false;
+        $('#dynamic-information').css('display', 'flex');
+        $('#dynamic-information').css('flex-direction', 'column');
+        setTimeout(()=>{
+            $('#dynamic-expanded-information').find('.section-body').html('');
+            $('#dynamic-expanded-information').css('height', 'auto');
+        }, 300);
+        $('#dynamic-expanded-information').css('opacity', '0');
+    }
+
+    /* Obtiene segunda palabra en nombre del miembro del staff */
+    // ADVERTENCIA! Podría ser segundo nombre o apellido
+    function getSecondName(name){
+        return name.split(" ")[0];
+    }
+
+    /* Genera listado de miembros del staff */
+    function generateStaff(){
+        console.log("generating staff");
+        var element = $('#dynamic-information');
+        element.find('.section-title').html('STAFF');
+
+        var html = '';
+
+        html += '<span class="staff-container">';
+        //html += '<p class="helper">Click sobre la imagen para conocer más sobre cada miembro del staff</p>'
+        
+        orderStaff.forEach(element => {
+            html += '<span class="staff-card">';
+            html += '<span class="staff-image">';
+            html += (element.image == null) ? '' : `<img class="img" img-path="assets/img/conf/${element.image}" src="">`;
+            html += '<span class="staff-job">';
+            html += 'Click para información';
+            html += '</span>';
+            html += '</span>';
+            html += '<span class="staff-name">';
+
+            // Bandera según nacionalidad
+            if (element.nationality != "empty" && element.nationality != "") {
+                html += `<span class="staff-flag"><img src="assets/img/paises/${element.nationality}.png"></span>`;
+            }
+            
+            html += element.name;
+            html += '</span>';
+            //html += '<span class="staff-company">';
+            //html += element.company;
+            //html += '</span>';
+            html += (element.company == null) ? '' : `<span class="staff-company">${element.company}</span>`;
+            html += '<span class="staff-information">';
+            html += '<p>';
+            html += element.short;
+            html += '</p>';
+            html += '</span>';
+            html += '</span>';
+        });
+        html += '</span>';
+
+        element.find('.section-body').html(html);
+
+        element.find('.section-body').find('.staff-container').find('.staff-card').each((index, element) => {
+            var actualImg = $(element).find('.staff-image');
+
+            if(actualImg.find('.img')[0] != undefined) actualImg.find('.img')[0].onload = () => {
+                actualImg.css('opacity', '1');
+                actualImg.css('transform', 'scale(1)');
+            }
+
+            actualImg.find('.img').attr('src', actualImg.find('.img').attr('img-path'));
+        });
+
+        element.css('opacity', '1');
+        element.css('transform', 'translateY(0)');
+        element.css('z-index', zIndexList);
+
+        $('.staff-image').click((event)=>{
+            element = $(event.currentTarget);
+            var image_path = element.find('.img').attr('src');
+            var name = element.parent().find('.staff-name').text();
+            generateExpandedStaff(image_path, name);
+        });
+        console.log("staff was generated");
+    }
+
+    /* Ocultar index cada vez que se hace click en un botón */
+    function hideIndex(){
+        inIndex = false;
+        $('#copyright').css('bottom', '-23px');
+        $('#galileo-logo').css('bottom', '-140px');
+        $('#title-container').css('opacity', '0');
+        $('#title-container').css('transform', 'translateY(20px)');
+        $('#background').css('opacity', '0');
+        $('#back-container').find('.btn-back').css('transform', 'translateX(0)');
+        $('body').css('overflow-y', 'auto');
+        $('#title-container').css('z-index', '-1');
+
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth'
+        });
+    }
+
+    /* Mostrar index cuando se regresa a pantalla principal */
+    function showIndex(){
+        $('#copyright').css('bottom', '130px');
+        $('#galileo-logo').css('bottom', '0');
+        var element = $('#title-container');
+        element.css('opacity', '1');
+        element.css('transform', 'translateY(0)');
+        $('#background').css('opacity', '0.1');
+        $('#back-container').find('.btn-back').css('transform', 'translateX(-85px)');
+        
+        element = $('#dynamic-information');
+        element.css('opacity', '0');
+        element.css('transform', 'translateY(-40px)');
+        element.css('z-index', 0);
+        element.css('padding', '15px 15px 70px 15px');
+
+        elementC = $('#dynamic-information .section-calendar');
+        elementC.css('opacity', '0');
+        elementC.css('transform', 'translateY(-4000px)');
+        elementC.css('z-index', 0);
+        elementC.css('display', 'none');
+        
+        $('body').css('overflow-y', 'hidden');
+        $('#title-container').css('z-index', '1');
+        $('#background').removeClass('unfocused');
+        setTimeout(()=>{
+            element.find('.section-body').html('');
+        },400);
+        inIndex = true;
+        setTimeout(hideBackArrow(), 500);
+    }
+
+    /* Oculta botón de retroceso */
+    function hideBackArrow() {
+        $('#back-container').find('.btn-back').css('transform', 'translateX(-85px)');
+    }
+
+    /* Dibujado principal */
+    // innovation-logo: Logo principal de la página
+    function populate() {
+        if(($(window).width() > WIDTH_RESIZE)){
+                $('#innovation-logo').attr('src','assets/img/simple-logo.png');
+                $('.background').html('<img src="" alt="">');
+                $('.background').find('img')[0].onload = () => {
+                    $('.background').css('opacity', '0.1');
+                    $('.background').css('transform', 'scale(1)');
+                    $('.background').css('z-index', '2');
+                }
+                $('.background').find('img').attr('src','assets/img/gears-animation.gif');
+                // LOGOS HERE
+                if (($(window).height() > 490) && ($(window).width() > WIDTH_RESIZE)) {
+                    var html = '';
+                    
+                    html += '<img src="" img-path="assets/img/logo-innovation.png" alt="Innovation Lab">';
+                    html += '<img src="" img-path="assets/img/logo-galileo.png" alt="Universidad Galileo">';
+                    
+                    $("#galileo-logo").html(html);
+
+                    $("#galileo-logo").find('img').each((index, element)=>{
+                        element.onload = () => {
+                            $(element).css('opacity', '1');
+                        }
+
+                        $(element).attr('src', $(element).attr('img-path'));
+                    });
+                } else {
+                    $("#galileo-logo").html("");
+                }
+            }else{
+                $('#innovation-logo').attr('src','assets/img/simple-logo.png');
+                //logo-main-phone
+                $('.background').html('');
+                var html = '';
+                html += '<span class="external-container">';
+                html += '<span class="left-logo">';
+                html += '<img src="">';
+                html += '</span>';
+                html += '<span class="center-logo">';
+                html += '<img src="">';
+                html += '</span>';
+                html += '<span class="right-logo">';
+                html += '<img src="">';
+                html += '</span>';
+                html += '</span>';
+                if ($(window).height() > 490) {
+                    $("#galileo-logo").html(html);
+                } else {
+                    $("#galileo-logo").html("");
+                }
+            }
+    }
+    
+
+
+
+    /* Redibujar si ocurre cambio de orientación o tamaño de ventana */
+    $(window).resize(()=>{
+        if(inIndex) { populate(); }
+    });
+    window.addEventListener("orientationchange", function() {
+        if (inIndex) { populate(); }
+    }, false);
+
+    /* Se ejecuta cuando carga la página */
+    (function($) {
+
+        var inserted = false;
+        staff.forEach((element, index) => {
+            inserted = false;
+            if(orderStaff.length == 0){
+                orderStaff.unshift(element);
+            }else{
+                orderStaff.forEach((actualElement, actualIndex) => {
+                    var comp = getSecondName(element.name).localeCompare(getSecondName(actualElement.name), 'en', {sensitivity: 'base'});
+                    if((comp == -1 || comp == 0) && !inserted){
+                        orderStaff.splice(actualIndex, 0, element);
+                        inserted = true;
+                    }
+                });
+                if(!inserted){
+                    orderStaff.push(element);
+                }
+            }
+        });
+
+        if(window.location.hash) {
+            // Remove the # character
+            var hash = window.location.hash.substring(1); 
+            if(hash == 'registro' || hash == 'r'){
+                hideIndex();
+                generateRegister();
+            } else if (hash == 'agenda' || hash == 'a') {
+                hideIndex();
+                generateAgenda();
+            } else if (hash == 'conferencistas' || hash == 'c') {
+                hideIndex();
+                console.log('staff');
+                generateStaff();
+            } else if (hash == 'conducta' || hash == 'cc') {
+                hideIndex();
+                generateConduct();
+            }
+        }
+
+        $('#innovation-logo')[0].onload = ()=>{
+            if(inIndex) $('.title-container').css('opacity', '1');
+        };
+
+        populate();
+
+        $('.btn-menu').click((event)=>{
+            if(!$(event.currentTarget).hasClass('disabled')){
+                hideIndex();
+
+                var element = event.target;
+                switch(element.id){
+                    case 'home-access':{
+                        generateHome();
+                    }break;
+                    case 'staff-access':{
+                        generateStaff();
+                    }break;
+                    case 'agenda-access':{
+                        generateAgenda();
+                    }break;
+                    case 'workshops-access':{
+                        generateWorkshops();
+                    }break;
+                    case 'calendar-access':{
+                        generateCalendar();
+                    }
+                }
+            }
+        });
+
+        $('#back').click(()=>{
+            if(staffExpanded) hideExpanded();
+            else if (workshopExpanded) { generateWorkshops(); workshopExpanded = false; }
+            else showIndex();
+        });
+    })(jQuery); 
+</script>
