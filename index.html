@@ -113,6 +113,20 @@
     var WIDTH_RESIZE = 850;
     var logos = [];
 
+
+    /* Carousel */
+    const repeat = true;
+    const noArrows = false;
+    const noBullets = false;
+
+    var container;
+    var slide;
+    var slideTotal;
+    var slideCurrent;
+    /* Carousel */
+
+
+
     /* Desplegar información de talleres */
     function generateWorkshops(){
         var correlative = 0;
@@ -152,11 +166,12 @@
         $('.workshop-card').click((event)=>{
             element = event.currentTarget;
             
-            if($(element).hasClass('expanded')){                        // si habia tarjeta expandida
+            if($(element).hasClass('expanded') || $(element).hasClass('expanded-with-carousel')){                        // si habia tarjeta expandida
 
                 workshopExpanded = false;
 
                 $(element).removeClass('expanded');                         // remover 'expanded'
+                $(element).removeClass('expanded-with-carousel');
                 $('#background').removeClass('unfocused');
                 
                 $('.workshop-card').each((index, workshop)=>{               // restaurar tarjetitas
@@ -170,6 +185,7 @@
                     }
                 });
                 $('#workshop-information').removeClass('expanded');
+                $('#workshop-information').removeClass('expanded-with-carousel');
             
             }else{
                 
@@ -189,8 +205,29 @@
                     }
                 });
 
-                html = '';                    
-                workshops[element.id].information.forEach((element)=>{      // generar información del taller
+                html = ''; 
+
+                /* Carousel */
+                if (workshops[element.id].imgs != null) {
+                    $(element).removeClass('expanded');
+                    $(element).addClass('expanded-with-carousel');
+
+                    html += '<div class="slider-container"> <div class="slider-content">';
+
+                    var len = workshops[element.id].imgs.length;
+                    for (var i = 0; i < len; i++) {
+                        html += '<div class ="slider-single">';
+                        html += `    <img class="slider-single-image" src="${workshops[element.id].imgs[i]}" alt="${i}" />`;
+                        html += `    <h1 class="slider-single-title">${workshops[element.id].captions[i]}</h1>`;
+                        html += '</div>';
+                    }
+
+                    html += '</div> </div>';
+                }
+
+
+                /* Información del taller */
+                workshops[element.id].information.forEach((element)=>{
                     html += '<p>';
                     html += element;
                     html += '</p>';
@@ -200,6 +237,7 @@
                 html += workshops[element.id].tools;
                 html += '</p>';
 
+                /* Staff del taller */
                 var findedStaff;
                 staff.forEach((staffMember)=>{
                     if(staffMember.name == workshops[element.id].contact){      // buscar en staff al encargado del taller
@@ -222,6 +260,7 @@
                     }
                 });
 
+                /* Contenido del taller */
                 if (workshops[element.id].syllabus != null) {
 
                     html += '<div class="syllabus-table-container">';
@@ -233,11 +272,20 @@
                     });
                     html += '</table>';
                     html + '</div>';
-                }
+                } 
                 
                 $('#workshop-information').html(html);
                 $('#workshop-information').addClass('expanded');
-            
+
+                /* Iniciar carousel */
+                if (workshops[element.id].imgs != null) {
+                    container = document.querySelector('.slider-container');
+                    slide = document.querySelectorAll('.slider-single');
+                    slideTotal = slide.length - 1;
+                    slideCurrent = -1;
+
+                    slideInitial();
+                } 
             }
 
             window.scroll({
@@ -375,7 +423,7 @@
     /* Obtiene segunda palabra en nombre del miembro del staff */
     // ADVERTENCIA! Podría ser segundo nombre o apellido
     function getSecondName(name){
-        return name.split(" ")[0];
+        return name.split(" ")[1];
     }
 
     /* Genera listado de miembros del staff */
@@ -505,57 +553,282 @@
     // innovation-logo: Logo principal de la página
     function populate() {
         if(($(window).width() > WIDTH_RESIZE)){
-                $('#innovation-logo').attr('src','assets/img/simple-logo.png');
-                $('.background').html('<img src="" alt="">');
-                $('.background').find('img')[0].onload = () => {
-                    $('.background').css('opacity', '0.1');
-                    $('.background').css('transform', 'scale(1)');
-                    $('.background').css('z-index', '2');
-                }
-                $('.background').find('img').attr('src','assets/img/gears-animation.gif');
-                // LOGOS HERE
-                if (($(window).height() > 490) && ($(window).width() > WIDTH_RESIZE)) {
-                    var html = '';
-                    
-                    html += '<img src="" img-path="assets/img/logo-innovation.png" alt="Innovation Lab">';
-                    html += '<img src="" img-path="assets/img/logo-galileo.png" alt="Universidad Galileo">';
-                    
-                    $("#galileo-logo").html(html);
-
-                    $("#galileo-logo").find('img').each((index, element)=>{
-                        element.onload = () => {
-                            $(element).css('opacity', '1');
-                        }
-
-                        $(element).attr('src', $(element).attr('img-path'));
-                    });
-                } else {
-                    $("#galileo-logo").html("");
-                }
-            }else{
-                $('#innovation-logo').attr('src','assets/img/simple-logo.png');
-                //logo-main-phone
-                $('.background').html('');
-                var html = '';
-                html += '<span class="external-container">';
-                html += '<span class="left-logo">';
-                html += '<img src="">';
-                html += '</span>';
-                html += '<span class="center-logo">';
-                html += '<img src="">';
-                html += '</span>';
-                html += '<span class="right-logo">';
-                html += '<img src="">';
-                html += '</span>';
-                html += '</span>';
-                if ($(window).height() > 490) {
-                    $("#galileo-logo").html(html);
-                } else {
-                    $("#galileo-logo").html("");
-                }
+            $('#innovation-logo').attr('src','assets/img/simple-logo.png');
+            $('.background').html('<img src="" alt="">');
+            $('.background').find('img')[0].onload = () => {
+                $('.background').css('opacity', '0.1');
+                $('.background').css('transform', 'scale(1)');
+                $('.background').css('z-index', '2');
             }
+            $('.background').find('img').attr('src','assets/img/gears-animation.gif');
+            // LOGOS HERE
+            if (($(window).height() > 490) && ($(window).width() > WIDTH_RESIZE)) {
+                var html = '';
+                
+                html += '<img src="" img-path="assets/img/logo-innovation.png" alt="Innovation Lab">';
+                html += '<img src="" img-path="assets/img/logo-galileo.png" alt="Universidad Galileo">';
+                html += '<img src="" img-path="assets/img/logo-xumak.png" alt="Xumak">';
+                
+                $("#galileo-logo").html(html);
+
+                $("#galileo-logo").find('img').each((index, element)=>{
+                    element.onload = () => {
+                        $(element).css('opacity', '1');
+                    }
+
+                    $(element).attr('src', $(element).attr('img-path'));
+                });
+            } else {
+                $("#galileo-logo").html("");
+            }
+        }else{
+            $('#innovation-logo').attr('src','assets/img/simple-logo.png');
+            //logo-main-phone
+            $('.background').html('');
+            var html = '';
+            html += '<span class="external-container">';
+            html += '<span class="left-logo">';
+            html += '<img src="">';
+            html += '</span>';
+            html += '<span class="center-logo">';
+            html += '<img src="">';
+            html += '</span>';
+            html += '<span class="right-logo">';
+            html += '<img src="">';
+            html += '</span>';
+            html += '</span>';
+            if ($(window).height() > 490) {
+                $("#galileo-logo").html(html);
+            } else {
+                $("#galileo-logo").html("");
+            }
+        }
     }
     
+
+
+
+    /* Carousel */
+    function initBullets() {
+        if (noBullets) {
+            return;
+        }
+        const bulletContainer = document.createElement('div');
+        bulletContainer.classList.add('bullet-container')
+        slide.forEach((elem, i) => {
+            const bullet = document.createElement('div');
+            bullet.classList.add('bullet')
+            bullet.id = `bullet-index-${i}`
+            bullet.addEventListener('click', () => {
+                goToIndexSlide(i);
+            })
+            bulletContainer.appendChild(bullet);
+            elem.classList.add('proactivede');
+        })
+        container.appendChild(bulletContainer);
+    }
+
+    function initArrows() {
+        if (noArrows) {
+            return;
+        }
+        const leftArrow = document.createElement('a')
+        const iLeft = document.createElement('i');
+        iLeft.classList.add('fa')
+        iLeft.classList.add('fa-arrow-left')
+        leftArrow.classList.add('slider-left')
+        leftArrow.appendChild(iLeft)
+        leftArrow.addEventListener('click', () => {
+            slideLeft();
+        })
+        const rightArrow = document.createElement('a')
+        const iRight = document.createElement('i');
+        iRight.classList.add('fa')
+        iRight.classList.add('fa-arrow-right')
+        rightArrow.classList.add('slider-right')
+        rightArrow.appendChild(iRight)
+        rightArrow.addEventListener('click', () => {
+            slideRight();
+        })
+        container.appendChild(leftArrow);
+        container.appendChild(rightArrow);
+    }
+
+    function updateBullet() {
+        if (!noBullets) {
+            document.querySelector('.bullet-container').querySelectorAll('.bullet').forEach((elem, i) => {
+                elem.classList.remove('active');
+                if (i === slideCurrent) {
+                    elem.classList.add('active');
+                }
+            })
+        }
+        checkRepeat();
+    }
+
+    function checkRepeat() {
+        if (!repeat) {
+            if (slideCurrent === slide.length - 1) {
+                slide[0].classList.add('not-visible');
+                slide[slide.length - 1].classList.remove('not-visible');
+                if (!noArrows) {
+                    document.querySelector('.slider-right').classList.add('not-visible')
+                    document.querySelector('.slider-left').classList.remove('not-visible')
+                }
+            }
+            else if (slideCurrent === 0) {
+                slide[slide.length - 1].classList.add('not-visible');
+                slide[0].classList.remove('not-visible');
+                if (!noArrows) {
+                    document.querySelector('.slider-left').classList.add('not-visible')
+                    document.querySelector('.slider-right').classList.remove('not-visible')
+                }
+            } else {
+                slide[slide.length - 1].classList.remove('not-visible');
+                slide[0].classList.remove('not-visible');
+                if (!noArrows) {
+                    document.querySelector('.slider-left').classList.remove('not-visible')
+                    document.querySelector('.slider-right').classList.remove('not-visible')
+                }
+            }
+        }
+    }
+
+    function slideRight() {
+        if (slideCurrent < slideTotal) {
+            slideCurrent++;
+        } else {
+            slideCurrent = 0;
+        }
+
+        if (slideCurrent > 0) {
+            var preactiveSlide = slide[slideCurrent - 1];
+        } else {
+            var preactiveSlide = slide[slideTotal];
+        }
+        var activeSlide = slide[slideCurrent];
+        if (slideCurrent < slideTotal) {
+            var proactiveSlide = slide[slideCurrent + 1];
+        } else {
+            var proactiveSlide = slide[0];
+
+        }
+
+        slide.forEach((elem) => {
+            var thisSlide = elem;
+            if (thisSlide.classList.contains('preactivede')) {
+                thisSlide.classList.remove('preactivede');
+                thisSlide.classList.remove('preactive');
+                thisSlide.classList.remove('active');
+                thisSlide.classList.remove('proactive');
+                thisSlide.classList.add('proactivede');
+            }
+            if (thisSlide.classList.contains('preactive')) {
+                thisSlide.classList.remove('preactive');
+                thisSlide.classList.remove('active');
+                thisSlide.classList.remove('proactive');
+                thisSlide.classList.remove('proactivede');
+                thisSlide.classList.add('preactivede');
+            }
+        });
+        preactiveSlide.classList.remove('preactivede');
+        preactiveSlide.classList.remove('active');
+        preactiveSlide.classList.remove('proactive');
+        preactiveSlide.classList.remove('proactivede');
+        preactiveSlide.classList.add('preactive');
+
+        activeSlide.classList.remove('preactivede');
+        activeSlide.classList.remove('preactive');
+        activeSlide.classList.remove('proactive');
+        activeSlide.classList.remove('proactivede');
+        activeSlide.classList.add('active');
+
+        proactiveSlide.classList.remove('preactivede');
+        proactiveSlide.classList.remove('preactive');
+        proactiveSlide.classList.remove('active');
+        proactiveSlide.classList.remove('proactivede');
+        proactiveSlide.classList.add('proactive');
+
+        updateBullet();
+    }
+
+    function slideLeft() {
+        if (slideCurrent > 0) {
+            slideCurrent--;
+        } else {
+            slideCurrent = slideTotal;
+        }
+
+        if (slideCurrent < slideTotal) {
+            var proactiveSlide = slide[slideCurrent + 1];
+        } else {
+            var proactiveSlide = slide[0];
+        }
+        var activeSlide = slide[slideCurrent];
+        if (slideCurrent > 0) {
+            var preactiveSlide = slide[slideCurrent - 1];
+        } else {
+            var preactiveSlide = slide[slideTotal];
+        }
+        slide.forEach((elem) => {
+            var thisSlide = elem;
+            if (thisSlide.classList.contains('proactive')) {
+                thisSlide.classList.remove('preactivede');
+                thisSlide.classList.remove('preactive');
+                thisSlide.classList.remove('active');
+                thisSlide.classList.remove('proactive');
+                thisSlide.classList.add('proactivede');
+            }
+            if (thisSlide.classList.contains('proactivede')) {
+                thisSlide.classList.remove('preactive');
+                thisSlide.classList.remove('active');
+                thisSlide.classList.remove('proactive');
+                thisSlide.classList.remove('proactivede');
+                thisSlide.classList.add('preactivede');
+            }
+        });
+
+        preactiveSlide.classList.remove('preactivede');
+        preactiveSlide.classList.remove('active');
+        preactiveSlide.classList.remove('proactive');
+        preactiveSlide.classList.remove('proactivede');
+        preactiveSlide.classList.add('preactive');
+
+        activeSlide.classList.remove('preactivede');
+        activeSlide.classList.remove('preactive');
+        activeSlide.classList.remove('proactive');
+        activeSlide.classList.remove('proactivede');
+        activeSlide.classList.add('active');
+
+        proactiveSlide.classList.remove('preactivede');
+        proactiveSlide.classList.remove('preactive');
+        proactiveSlide.classList.remove('active');
+        proactiveSlide.classList.remove('proactivede');
+        proactiveSlide.classList.add('proactive');
+
+        updateBullet();
+    }
+
+    function goToIndexSlide(index) {
+        const sliding = (slideCurrent > index) ? () => slideRight() : () => slideLeft();
+        while (slideCurrent !== index) {
+            sliding();
+        }
+    }
+
+    function slideInitial() {
+        initBullets();
+        initArrows();
+        setTimeout(function () {
+            slideRight();
+        }, 250);
+    }
+    /* Carousel */
+
+
+
+
+
 
 
 
@@ -646,3 +919,17 @@
         });
     })(jQuery); 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
