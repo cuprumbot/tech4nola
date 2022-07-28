@@ -58,11 +58,10 @@
                 </span>
 
                 <span class="title-menu">
-                    <a id="home-access" class="btn-menu c1">Acerca de</a>
+                    <a id="home-access" class="btn-menu c1">About us</a>
                     <a id="staff-access" class="btn-menu c2">Staff</a>
-                    <!-- <a id="agenda-access" class="btn-menu c3">Agenda</a> -->
                     <a id="workshops-access" class="btn-menu c3">Workshops</a>
-                    <a id="calendar-access" class="btn-menu c4">Calendario</a>
+                    <!-- <a id="calendar-access" class="btn-menu c4">Calendar</a> -->
                 </span>
 
             </span>
@@ -177,7 +176,7 @@
                 $('.workshop-card').each((index, workshop)=>{               // restaurar tarjetitas
                     if(workshop.id != element.id){
                         var actualWorkshop = $('#' + workshop.id);
-                        actualWorkshop.css('height', '150px');
+                        actualWorkshop.css('height', '250px');
                         actualWorkshop.css('margin', '7.5px 15px');
                     }else{
                         var actualWorkshop = $('#' + workshop.id);
@@ -261,7 +260,31 @@
                 });
 
                 /* Contenido del taller */
-                if (workshops[element.id].syllabus != null) {
+                if (workshops[element.id].completeSyllabus != null) {
+
+                    html += '<div class="syllabus-table-container">';
+                    html += '<table class="syllabus-table">';
+                    workshops[element.id].completeSyllabus.forEach((element)=>{      // generar información del taller
+                        html += '<tr>';
+                        
+                        html += `<td>${element.name}</td>`;
+
+                        html += '<td>';
+
+                        html += '<ul>';
+                        element.topics.forEach((topic) => {
+                            html += `<li>${topic}</li>`;
+                        });
+                        html += '</ul>';
+
+                        html += '</td>';
+
+                        html += '</tr>';
+                    });
+                    html += '</table>';
+                    html + '</div>';
+
+                } else if (workshops[element.id].syllabus != null) {
 
                     html += '<div class="syllabus-table-container">';
                     html += '<table class="syllabus-table">';
@@ -324,7 +347,7 @@
 
         var html = '';
 
-            html += '<img src="assets/img/header-img.png">';
+            html += '<div class="header-image-container"><div class="container"><img src="assets/img/header-img.png"></div></div>';
 
             html += '<p>';
             html += 'Tech4Nola es un proyecto nuevo.<br><br>';
@@ -442,7 +465,7 @@
             html += '<span class="staff-image">';
             html += (element.image == null) ? '' : `<img class="img" img-path="assets/img/conf/${element.image}" src="">`;
             html += '<span class="staff-job">';
-            html += 'Click para información';
+            html += 'Click for more info';
             html += '</span>';
             html += '</span>';
             html += '<span class="staff-name">';
@@ -553,14 +576,14 @@
     // innovation-logo: Logo principal de la página
     function populate() {
         if(($(window).width() > WIDTH_RESIZE)){
-            $('#innovation-logo').attr('src','assets/img/simple-logo.png');
+            $('#innovation-logo').attr('src','assets/img/logo-d-color.png');
             $('.background').html('<img src="" alt="">');
             $('.background').find('img')[0].onload = () => {
                 $('.background').css('opacity', '0.1');
                 $('.background').css('transform', 'scale(1)');
                 $('.background').css('z-index', '2');
             }
-            $('.background').find('img').attr('src','assets/img/gears-animation.gif');
+            //$('.background').find('img').attr('src','assets/img/gears-animation.gif');
             // LOGOS HERE
             if (($(window).height() > 490) && ($(window).width() > WIDTH_RESIZE)) {
                 var html = '';
@@ -568,6 +591,7 @@
                 html += '<img src="" img-path="assets/img/logo-innovation.png" alt="Innovation Lab">';
                 html += '<img src="" img-path="assets/img/logo-galileo.png" alt="Universidad Galileo">';
                 html += '<img src="" img-path="assets/img/logo-xumak.png" alt="Xumak">';
+                html += '<img src="" img-path="assets/img/logo-maia-horizontal.png" alt="Maia">';
                 
                 $("#galileo-logo").html(html);
 
@@ -582,7 +606,7 @@
                 $("#galileo-logo").html("");
             }
         }else{
-            $('#innovation-logo').attr('src','assets/img/simple-logo.png');
+            $('#innovation-logo').attr('src','assets/img/logo-d-color.png');
             //logo-main-phone
             $('.background').html('');
             var html = '';
