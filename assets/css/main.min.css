@@ -837,7 +837,8 @@ nav {
   padding: 30px;
   position: relative;
   width: 100%;
-  max-width: 900px; }
+  max-width: 900px;
+  transform: scale(0.01); }
   .dynamic-expanded-information .exit {
     position: absolute;
     right: 0; }
@@ -1492,8 +1493,7 @@ body {
   justify-content: center;
 }
 .dynamic-information .section-body .header-image-container img {
-  width: 406px;
-  height: 183px;
+  width: 300px;
 }
 
     .dynamic-information .section-body .subtitle {

@@ -424,11 +424,13 @@
 
         element.find('.section-body').html(html);
 
+        $('#dynamic-information').css('transform', 'scale(0.01)');
         setTimeout(()=>{
             $('#dynamic-information').css('display', 'none');
-        }, 300);
+        }, 100);
         $('#dynamic-expanded-information').css('width', '100vw');
         $('#dynamic-expanded-information').css('height', '100vh');
+        $('#dynamic-expanded-information').css('transform', 'scale(1)');
         $('#dynamic-expanded-information').css('opacity', '1');
         $('#dynamic-expanded-information').css('z-index', zIndexDetails);
     }
@@ -436,13 +438,17 @@
     /* Ocultar información expandida */
     function hideExpanded(){
         staffExpanded = false;
+        $('#dynamic-information').css('transform', 'scale(1)');
         $('#dynamic-information').css('display', 'flex');
+
         $('#dynamic-information').css('flex-direction', 'column');
         setTimeout(()=>{
             $('#dynamic-expanded-information').find('.section-body').html('');
             $('#dynamic-expanded-information').css('height', 'auto');
         }, 300);
+
         $('#dynamic-expanded-information').css('opacity', '0');
+        $('#dynamic-expanded-information').css('transform', 'scale(0.01)');
     }
 
     /* Obtiene segunda palabra en nombre del miembro del staff */
