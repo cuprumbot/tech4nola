@@ -59,8 +59,8 @@
 
                 <span class="title-menu">
                     <a id="home-access" class="btn-menu c1">About us</a>
-                    <a id="staff-access" class="btn-menu c2">Staff</a>
-                    <a id="workshops-access" class="btn-menu c3">Workshops</a>
+                    <a id="staff-access" class="btn-menu c1">Staff</a>
+                    <a id="workshops-access" class="btn-menu c1">Workshops</a>
                     <!-- <a id="calendar-access" class="btn-menu c4">Calendar</a> -->
                 </span>
 
@@ -191,7 +191,9 @@
                 workshopExpanded = true;
 
                 $(element).addClass('expanded');                        // agregar 'expanded' para que se vean los detalles
-                $('#background').addClass('unfocused');
+                // FIND ME: blur de talleres removido
+                // agregar de nuevo si se usa fondo sencillo
+                //$('#background').addClass('unfocused');
 
                 $('.workshop-card').each((index, workshop)=>{               // hacer desaparecer demás tarjetas
                     if(workshop.id != element.id){
@@ -523,7 +525,7 @@
         $('#galileo-logo').css('bottom', '-140px');
         $('#title-container').css('opacity', '0');
         $('#title-container').css('transform', 'translateY(20px)');
-        $('#background').css('opacity', '0');
+        //$('#background').css('opacity', '0');
         $('#back-container').find('.btn-back').css('transform', 'translateX(0)');
         $('body').css('overflow-y', 'auto');
         $('#title-container').css('z-index', '-1');
@@ -542,7 +544,7 @@
         var element = $('#title-container');
         element.css('opacity', '1');
         element.css('transform', 'translateY(0)');
-        $('#background').css('opacity', '0.1');
+        $('#background').css('opacity', '1.0');
         $('#back-container').find('.btn-back').css('transform', 'translateX(-85px)');
         
         element = $('#dynamic-information');
@@ -577,9 +579,9 @@
     function populate() {
         if(($(window).width() > WIDTH_RESIZE)){
             $('#innovation-logo').attr('src','assets/img/logo-d-color.png');
-            $('.background').html('<img src="" alt="">');
+            $('.background').html('<img src="assets/img/fondo.png" alt="">');
             $('.background').find('img')[0].onload = () => {
-                $('.background').css('opacity', '0.1');
+                $('.background').css('opacity', '1.0');
                 $('.background').css('transform', 'scale(1)');
                 $('.background').css('z-index', '2');
             }
