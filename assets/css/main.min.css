@@ -1294,7 +1294,12 @@ body {
   background: linear-gradient(130deg, rgba(28,249,141,1) 0%, rgba(229,242,142,1) 100%); 
   */
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  scrollbar-width: none;
+  overflow-x: hidden; }
+body::-webkit-scrollbar {
+  display: none;
+}
   body .helper {
     color: black;
     display: flex;
@@ -1308,6 +1313,7 @@ body {
         body .helper .p {
           color: black;
         }
+}
 
 ::-webkit-scrollbar {
   width: 0px;
@@ -1730,10 +1736,10 @@ body {
             width: 500px; } }
         @media only screen and (max-width: 500px) {
           .title-container .inner-container .title-container .title-menu {
-            width: 400px; } }
+            width: 152px; } }
         @media only screen and (max-width: 380px) {
           .title-container .inner-container .title-container .title-menu {
-            width: 300px; } }
+            width: 152px; } }
 
         /* los botones heredan colores de aqui */
         .title-container .inner-container .title-container .title-menu .btn-menu {

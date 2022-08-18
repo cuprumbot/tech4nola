@@ -591,7 +591,9 @@
                 $('.background').css('transform', 'scale(1)');
                 $('.background').css('z-index', '2');
             }
+            
             //$('.background').find('img').attr('src','assets/img/gears-animation.gif');
+            
             // LOGOS HERE
             if (($(window).height() > 490) && ($(window).width() > WIDTH_RESIZE)) {
                 var html = '';
@@ -615,8 +617,14 @@
             }
         }else{
             $('#innovation-logo').attr('src','assets/img/logo-d-color.png');
-            //logo-main-phone
-            $('.background').html('');
+
+            $('.background').html('<img src="assets/img/fondo.png" alt="">');
+            $('.background').find('img')[0].onload = () => {
+                $('.background').css('opacity', '1.0');
+                $('.background').css('transform', 'scale(1)');
+                $('.background').css('z-index', '2');
+            }
+
             var html = '';
             html += '<span class="external-container">';
             html += '<span class="left-logo">';
