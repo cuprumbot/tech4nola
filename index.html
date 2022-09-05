@@ -601,13 +601,13 @@
             //$('.background').find('img').attr('src','assets/img/gears-animation.gif');
             
             // LOGOS HERE
-            if (($(window).height() > 490) && ($(window).width() > WIDTH_RESIZE)) {
+            if (($(window).height() > 450) && ($(window).width() > WIDTH_RESIZE)) {
                 var html = '';
                 
-                html += '<img src="" img-path="assets/img/logo-xumak.png" alt="Xumak">';
-                html += '<img src="" img-path="assets/img/logo-galileo.png" alt="Universidad Galileo">';
-                html += '<img src="" img-path="assets/img/logo-maia-horizontal.png" alt="Maia">';
-                html += '<img src="" img-path="assets/img/logo-innovation.png" alt="Innovation Lab">';
+                html += '<a href="https://xumak.com/"><img src="" img-path="assets/img/logo-xumak.png" alt="Xumak"></a>';
+                html += '<a href="http://www.galileo.edu/"><img src="" img-path="assets/img/logo-galileo.png" alt="Universidad Galileo"></a>';
+                html += '<a href="https://www.maiagt.org/"><img src="" img-path="assets/img/logo-maia-horizontal.png" alt="Maia"></a>';
+                html += '<a href="https://innovacion.galileo.edu/"><img src="" img-path="assets/img/logo-innovation.png" alt="Innovation Lab"></a>';
                 
                 $("#galileo-logo").html(html);
 
@@ -632,6 +632,8 @@
             }
 
             var html = '';
+
+            /*
             html += '<span class="external-container">';
             html += '<span class="left-logo">';
             html += '<img src="">';
@@ -648,6 +650,22 @@
             } else {
                 $("#galileo-logo").html("");
             }
+            */
+
+            html += '<a href="https://xumak.com/"><img src="" img-path="assets/img/logo-xumak.png" alt="Xumak"></a>';
+            html += '<a href="http://www.galileo.edu/"><img src="" img-path="assets/img/logo-galileo.png" alt="Universidad Galileo"></a>';
+            html += '<a href="https://www.maiagt.org/"><img src="" img-path="assets/img/logo-maia-horizontal.png" alt="Maia"></a>';
+            html += '<a href="https://innovacion.galileo.edu/"><img src="" img-path="assets/img/logo-innovation.png" alt="Innovation Lab"></a>';
+                
+            $("#galileo-logo").html(html);
+
+            $("#galileo-logo").find('img').each((index, element)=>{
+                element.onload = () => {
+                    $(element).css('opacity', '1');
+                }
+
+                $(element).attr('src', $(element).attr('img-path'));
+            });
         }
     }
     
