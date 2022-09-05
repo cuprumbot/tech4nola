@@ -24,8 +24,7 @@
 
    /* redirect all 404 trafic to index.html */
    function redirect() {
-     //console.log(l);
-     var hash = (l.pathname == '/conducta') ? '#cc' : '#' + l.pathname[1];
+     var hash = '#' + l.pathname[1];
      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + repo + '/?' +
               (l.pathname ? 'p=' + l.pathname.replace(/&/g, '~and~').replace(repo, '') : '') +
               (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
@@ -51,6 +50,7 @@
    }
 
   /* if current document is 404 page page, redirect to index.html otherwise resolve */
-  document.title === '404' ? redirect() : resolve()
+  document.title === 'Redirecting...' ? redirect() : resolve()
 
-}(window.location, window.projectPages || false ))
+//}(window.location, window.projectPages || false ))
+}(window.location, true ))
