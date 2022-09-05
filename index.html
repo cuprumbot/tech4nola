@@ -58,10 +58,9 @@
                 </span>
 
                 <span class="title-menu">
-                    <a id="home-access" class="btn-menu c1">About us</a>
+                    <a id="home-access" class="btn-menu c1">Vision & Context</a>
                     <a id="staff-access" class="btn-menu c1">Staff</a>
-                    <a id="workshops-access" class="btn-menu c1">Workshops</a>
-                    <!-- <a id="calendar-access" class="btn-menu c4">Calendar</a> -->
+                    <a id="workshops-access" class="btn-menu c1">Methodology</a>
                 </span>
 
             </span>
@@ -130,13 +129,13 @@
     function generateWorkshops(){
         var correlative = 0;
         var element = $('#dynamic-information');
-        element.find('.section-title').html('WORKSHOPS');
+        element.find('.section-title').html('METHODOLOGY');
         
         var html = '';
         html += '<span class="workshops-container">';
-        workshops.forEach(element => {                                  // para cada workshop
+        workshops.forEach(element => {                                      // para cada workshop
             html += `<span id="${correlative}" class="workshop-card">`;
-            html += `<img src="assets/img/workshops/${element.image}">`;              // tarjeta con imagen de fondo
+            html += `<img src="assets/img/workshops/${element.image}">`;    // tarjeta con imagen de fondo
             html += '<span class="workshop-info-container">';
             html += '<span class="workshop-name">';                         // nombre
             html += element.name;
@@ -345,32 +344,39 @@
     /* Muestra información principal */
     function generateHome(){
         var element = $('#dynamic-information');
-        element.find('.section-title').html('');
+        element.find('.section-title').html('VISION AND CONTEXT');
 
         var html = '';
+            
+            html += '<span class="subtitle">The issue</span>';
 
-            html += '<div class="header-image-container"><div class="container"><img src="assets/img/header-img.png"></div></div>';
+            html += '<p>Although the country has invested efforts in reducing the gap between people and gender, territorial inequalities, the limitations of coverage and quality of health and education services continue to represent a challenge for the country, especially for the inclusion of Mayan women in society who, in addition to representing the majority in illiteracy and/or low schooling rates, are also victims of various forms of gender violence, often used as a tool of subordination and control by their relatives.</p>';
 
-            html += '<p>';
-            html += 'Tech4Nola es un proyecto nuevo.<br><br>';
-            html += 'La información del proyecto pronto aparecerá aquí. Aquí podrás ver la información del proyecto. Si quieres informarte sobre el proyecto, podrás hacerlo aquí.<br><br>';
-            html += 'Esta será la página informativa';
-            html += '</p></span>';
+            html += '<p>The statistics show the high levels of social exclusion:</p>';
 
-            html += '<span class="subtitle">';
-            html += 'Más información';
-            html += '</span>';
+            html += '<ul>';
+            html += '<li>In 2011, the illiteracy rate for Mayan men was 25% and for Mayan women 48%, while the rate for ladino women was 19% (ladino is the term for mixed Native American-African-Spanish people in LATAM).</li>';
+            html += '<li>The education average in the metropolitan area is eight years. In contrast, in the rural area where the majority of the Mayan population is concentrated, the average is four years and three years for Mayan women.</li>';
+            html += '<li>Only 17% of public schools have access to technology and connectivity.</li>';
+            html += '<li>The National Employment Survey showed that in 2014 the female labor force represented 1/3 of the economically active population, of which it is estimated that 34% are Mayan women and that more than 80% are working in informal activities, mainly commerce or as domestic employees, where they do not have social security or the support of labor laws, which makes it easier for them to be vulnerable to receiving a salary much lower than the minimum wage.</li>';
+            html += '<li>Thousands of Mayan women dedicate an average of 6.1 hours/day to unpaid work that contributes to the well-being of the family and the development of society; and 7.5 hours a day to agricultural work, which in many regions of the country is not paid because it is considered part of the income received by the men of the family.</li>';
+            html += '</ul>';
 
-            html += '<p>';
-            html += '<b><font size="3">Detalles importantes</font></b><br>';
-            html += 'Información colocada como bloque.<br>';
-            html += 'Bloque compacto de información.<br>';
-            html += 'Información.<br><br>';
+            html += '<span class="subtitle">Why do we choose to work on it?</span>';
 
-            html += '<b><font size="3">Otros detalles</font></b><br>';
-            html += 'Aquí podrás conocer todo lo relacionado al proyecto.<br>';
-            html += 'El proyecto se llama Tech4Nola.<br>';
-            html += '</p>';
+            html += '<p>The proportion of women in our sector is very unrepresentative because few women in the country are inclined to study computer science, and many fewer are the Mayan women who have the opportunity to do so due to limitations in study and access to education in technology.</p>';
+
+            html += '<p>We want to allow those who have fewer opportunities. Provide a historically excluded population group the opportunity to acquire knowledge and develop skills that open doors to a technological world where the use of a computer represents a primary tool.</p>';
+
+            html += '<span class="subtitle">How this project will advance racial equity?</span>';
+
+            html += '<p>Ensuring equal access for all men and women to quality technical, professional, and higher education, including university education, represents part of the MDGs, as well as increasing the number of young people and adults who have the necessary skills, in particular technical and professional, to access employment, decent work and entrepreneurship.</p>';
+
+            html += '<p>The Mayan women in rural areas of the country lack opportunities for technical and/or professional studies, either due to lack of resources, limitations in the national educational infrastructure, or masculinity in the communities in which they prefer their boy children be who study and work.</p>';
+
+            html += '<p>Providing these young girls with computer and technological skills will not only enable them to participate as equals in the labor market but will also give them the competitive advantage of technical knowledge within their communities, which will allow them to raise their self-esteem, will increase the possibility of employment and income generation, which will be transformative for them, their communities and the country as a whole.</p>';
+
+            html += '<p>Recognizing the diversity of the Mayan people, valuing their customs and traditions, and working to assert the rights of Mayan women -such as access to education and personal development- are significant advances in the development of racial equity in the country. That is why XumaK proposes to launch Tech4Nola.</p>'
         
         element.find('.section-body').html(html);
         element.css('opacity', '1');
@@ -598,10 +604,10 @@
             if (($(window).height() > 490) && ($(window).width() > WIDTH_RESIZE)) {
                 var html = '';
                 
-                html += '<img src="" img-path="assets/img/logo-innovation.png" alt="Innovation Lab">';
-                html += '<img src="" img-path="assets/img/logo-galileo.png" alt="Universidad Galileo">';
                 html += '<img src="" img-path="assets/img/logo-xumak.png" alt="Xumak">';
+                html += '<img src="" img-path="assets/img/logo-galileo.png" alt="Universidad Galileo">';
                 html += '<img src="" img-path="assets/img/logo-maia-horizontal.png" alt="Maia">';
+                html += '<img src="" img-path="assets/img/logo-innovation.png" alt="Innovation Lab">';
                 
                 $("#galileo-logo").html(html);
 
@@ -905,19 +911,15 @@
         if(window.location.hash) {
             // Remove the # character
             var hash = window.location.hash.substring(1); 
-            if(hash == 'registro' || hash == 'r'){
+            if(hash == 'vision' || hash == 'v'){
                 hideIndex();
-                generateRegister();
-            } else if (hash == 'agenda' || hash == 'a') {
+                generateHome();
+            } else if (hash == 'staff' || hash == 's') {
                 hideIndex();
-                generateAgenda();
-            } else if (hash == 'conferencistas' || hash == 'c') {
-                hideIndex();
-                console.log('staff');
                 generateStaff();
-            } else if (hash == 'conducta' || hash == 'cc') {
+            } else if (hash == 'methodology' || hash == 'm') {
                 hideIndex();
-                generateConduct();
+                generateWorkshops();
             }
         }
 

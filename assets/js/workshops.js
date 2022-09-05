@@ -73,6 +73,9 @@ var workshops = [
         duration : '12 weeks',
         image : 'arduino.png',
 
+        imgs : ['https://picsum.photos/id/973/200/300', 'https://picsum.photos/id/974/200/300', 'https://picsum.photos/id/975/200/300', 'https://picsum.photos/id/976/200/300'],
+        captions : ['Módulo 1', 'Módulo 2', 'Módulo 3', 'Módulo 4'],
+
         completeSyllabus : [
             {
                 name : 'M1 - Engineering Fundamentals',
@@ -313,6 +316,18 @@ var workshops = [
                 ]
             }
         ]
+    },
+
+
+    {
+        name : 'Developmental (career) mentoring program',
+        introduction : 'Three-month mentoring process to develop a web solution.',
+        information : ['The fourth and final phase, consists  in a three-month mentoring process, in which the students are going to develop a web solution for a non-profit organization, and will have the support of mentors from XumaK and the University, for the approach of the solution, the clients relationship, and the development and implementation of the solution.'],
+        tools : 'Mentors',
+        duration : '8 weeks',
+        image : 'group.png',
+
+        completeSyllabus : []
     }
 
     /*

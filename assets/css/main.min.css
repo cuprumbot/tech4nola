@@ -505,7 +505,7 @@ nav {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 0 0;
   background: #FFF8F2;
   box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.15);
@@ -1708,7 +1708,7 @@ body::-webkit-scrollbar {
         font-size: 30px; }
       .title-container .inner-container .title-container .title-menu {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         transition: transform 0.2s ease, opacity 0.5s ease;
         opacity: 1;
         user-select: none;
@@ -1747,7 +1747,7 @@ body::-webkit-scrollbar {
           /* find me */
           padding: 6px;
           font-size: 17px;
-          width: 120px;
+          width: 140px;
           /*font-weight: bold;*/
           margin: 5px 0;
           background: #FFF8F2;
@@ -1879,7 +1879,7 @@ body::-webkit-scrollbar {
 }
 
  .slider-container {
-   background-color: #334433;
+   background-color: #69048A;
    position: relative;
    margin: 7.5px 15px;
    height: 500px;
