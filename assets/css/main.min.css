@@ -1531,7 +1531,7 @@ body::-webkit-scrollbar {
           font-size: 14px; } }
 
   .dynamic-information .darkContainer {
-    background-color: #69048A;
+    background-color: #69048Aaa;
     margin-bottom: 20px;
     color: white;
   }
@@ -1540,7 +1540,7 @@ body::-webkit-scrollbar {
   }
 
   .dynamic-information .lightContainer {
-    background-color: #AE64FF;
+    background-color: #AE64FFcc;
     padding: 18px;
     margin: 18px;
     color: black;
