@@ -1732,10 +1732,10 @@ body::-webkit-scrollbar {
               width: 500px; } }
           @media only screen and (max-width: 500px) {
             .title-container .inner-container .title-container .title .innovation-logo {
-              width: 450px; } }
+              width: 360px; } }
           @media only screen and (max-width: 360px) {
             .title-container .inner-container .title-container .title .innovation-logo {
-              width: 320px; } }
+              width: 300px; } }
       .title-container .inner-container .title-container .date {
         color: black;
         margin-bottom: 20px;
