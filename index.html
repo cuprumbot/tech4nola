@@ -557,6 +557,7 @@
         $('#title-container').css('transform', 'translateY(20px)');
         //$('#background').css('opacity', '0');
         $('#back-container').find('.btn-back').css('transform', 'translateX(0)');
+        $('#back-container').find('.btn-back').css('-webkit-transform', 'translateX(0)');
         $('body').css('overflow-y', 'auto');
         $('#title-container').css('z-index', '-1');
 
@@ -576,6 +577,7 @@
         element.css('transform', 'translateY(0)');
         $('#background').css('opacity', '1.0');
         $('#back-container').find('.btn-back').css('transform', 'translateX(-400px)');
+        $('#back-container').find('.btn-back').css('-webkit-transform', 'translateX(-400px)');
         
         element = $('#dynamic-information');
         element.css('opacity', '0');
@@ -602,6 +604,7 @@
     /* Oculta botón de retroceso */
     function hideBackArrow() {
         $('#back-container').find('.btn-back').css('transform', 'translateX(-400px)');
+        $('#back-container').find('.btn-back').css('-webkit-transform', 'translateX(-400px)');
     }
 
     /* Dibujado principal */

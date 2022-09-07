@@ -1428,7 +1428,7 @@ body::-webkit-scrollbar {
   left: 0; }
   .back-container .btn-back {
     margin-left: 40px;
-    transform: translateX(-85px);
+    transform: translateX(-400px);
     transition: 0.3s ease;
     color: white;
     /* FIND ME Color de botón de retorno */
