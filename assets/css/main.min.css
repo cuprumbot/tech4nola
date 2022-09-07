@@ -1344,6 +1344,7 @@ body::-webkit-scrollbar {
     .galileo-logo {
       margin-bottom: 0;
       height: auto;
+      width: 90%;
       z-index: 2; }
       .galileo-logo .external-container {
         position: relative;
@@ -1385,11 +1386,13 @@ body::-webkit-scrollbar {
   @media only screen and (max-width: 500px) {
     .galileo-logo {
       justify-content: space-around;
-      height: auto; } }
+      height: auto; } 
+  }
   @media only screen and (max-width: 370px) {
     .galileo-logo {
       justify-content: space-around;
-      height: auto; } }
+      height: auto; } 
+  }
   .galileo-logo img {
     opacity: 0;
     transition: 0.5s ease;
@@ -1397,7 +1400,7 @@ body::-webkit-scrollbar {
     margin: 10px 15px; }
     @media only screen and (max-width: 850px) {
       .galileo-logo img {
-        width: 140px;
+        width: 130px;
         height: auto;
         margin: 5px 10px; } }
 
@@ -1521,7 +1524,7 @@ body::-webkit-scrollbar {
         .dynamic-information .section-body .subtitle {
           font-size: 18px; } }
     .dynamic-information .section-body p {
-      padding: 5px 15px;
+      padding: 15px;
       text-align: justify;
       color: black;
       font-size: 16px;
@@ -1531,26 +1534,30 @@ body::-webkit-scrollbar {
           font-size: 14px; } }
 
   .dynamic-information .darkContainer {
-    background-color: #69048Aaa;
+    background-color: #69048A;
     margin-bottom: 20px;
     color: white;
   }
   .dynamic-information .section-body .darkContainer p {
+    font-size: 17px;
     color: white;
   }
 
   .dynamic-information .lightContainer {
-    background-color: #AE64FFcc;
+    /*background-color: #AE64FF;*/
+    background-color: #22FE9A;
     padding: 18px;
     margin: 18px;
     color: black;
   }
   .dynamic-information .section-body .lightContainer p {
+    font-size: 19px;
     color: black;
   }
 
     .dynamic-information .section-body ul {
-      font-size: 16px; }
+      font-size: 18px; 
+      color: white; }
     .dynamic-information .section-body .map-container {
       display: flex;
       width: 100%;
@@ -1661,7 +1668,7 @@ body::-webkit-scrollbar {
       transition: 0.5s ease;
       height: auto;
       justify-content: center;
-      margin-top: -100px; }
+      margin-top: -120px; }
       .title-container .inner-container .title-container:hover .title-menu, .title-container .inner-container .title-container:active .title-menu, .title-container .inner-container .title-container:focus .title-menu {
         user-select: initial;
         -moz-user-select: none;
@@ -1856,7 +1863,7 @@ body::-webkit-scrollbar {
   width: 100%;
   color: white;
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 18px;
 
   border-collapse: separate;
   border-spacing: 3px;
