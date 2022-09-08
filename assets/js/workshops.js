@@ -73,12 +73,19 @@ var workshops = [
         duration : '12 weeks',
         image : 'arduino.png',
 
-        imgs : ['https://picsum.photos/id/973/200/300', 'https://picsum.photos/id/974/200/300', 'https://picsum.photos/id/975/200/300', 'https://picsum.photos/id/976/200/300'],
-        captions : ['Módulo 1', 'Módulo 2', 'Módulo 3', 'Módulo 4'],
+        imgs : ['assets/img/robotics/KIT10.png', 'assets/img/robotics/KIT11.png', 'assets/img/robotics/KIT20.png', 'assets/img/robotics/KIT21.png', 'assets/img/robotics/KIT30.png', 'assets/img/robotics/KIT31.png'],
+        captions : [
+            'KIT 1: Through this kit, the aim is for the student to be able to integrate the digital software tools with the tools in the physical world, in such a way that all the theory can be put into practice. So that the student feels comfortable handling the basic components of electronics both in their simulators and through their physical kit.',
+            'KIT 1: Through this kit, the aim is for the student to be able to integrate the digital software tools with the tools in the physical world, in such a way that all the theory can be put into practice. So that the student feels comfortable handling the basic components of electronics both in their simulators and through their physical kit.',
+            'KIT 2: Combining new elements, sensors, actuators and accessories, we seek to increase the student\'s creative capacity to size solutions for real life applications. By generating this kit, you will be able to arm yourself with the physical world as well as in the digital world, integrating the previous systems and their knowledge bases.',
+            'KIT 2: Combining new elements, sensors, actuators and accessories, we seek to increase the student\'s creative capacity to size solutions for real life applications. By generating this kit, you will be able to arm yourself with the physical world as well as in the digital world, integrating the previous systems and their knowledge bases.',
+            'KIT 3: Having the modern tools of wireless communications we want to give each student the power to communicate technology with bluetooth and internet technologies for sending and receiving data. We seek that the management of hardware and software go hand in hand in such a way as to generate technological solutions applicable to real life through kits oriented towards automation and intelligent monitoring.',
+            'KIT 3: Having the modern tools of wireless communications we want to give each student the power to communicate technology with bluetooth and internet technologies for sending and receiving data. We seek that the management of hardware and software go hand in hand in such a way as to generate technological solutions applicable to real life through kits oriented towards automation and intelligent monitoring.'
+        ],
 
         completeSyllabus : [
             {
-                name : 'M1 - Engineering Fundamentals',
+                name : 'M1 - Engineering Fundamentals\n\nDefine the basic elements of engineering, the way of thinking and solving problems of daily life.',
                 topics : [
                     'What is engineering?',
                     'Engineering languages',
@@ -88,38 +95,41 @@ var workshops = [
                 ]
             },
             {
-                name : 'M2 - Electricity Fundamentals',
+                name : 'M2 - Electricity Fundamentals\n\nWe begin to see the fundamental tools of any integrated circuit. See what it is made up of and feed the most basic level until you can develop more complex ideas.',
                 topics : [
                     'Electricity',
                     'Voltage',
                     'Current',
-                    'Power'
+                    'Power',
+                    'Practical Exercises'
                 ]
             },
             {
-                name : 'M3 - Electronics Fundamentals',
+                name : 'M3 - Electronics Fundamentals\n\nWe are going to know the elements that allow us to interact with the digital world in such a way that we can create our first electronic circuits with the help of our first kit.',
                 topics : [
                     'Electronic circuits',
                     'Integrated circuits',
                     'Transistors',
                     'Resistors',
                     'Capacitors',
-                    'Inductors'
+                    'Inductors',
+                    'Practical Exercises'
                 ]
             },
             {
-                name : 'M4 - CAD & 3D Printing',
+                name : 'M4 - CAD & 3D Printing\n\nWe started working on design from turning our ideas on paper into tangible ideas through 3D design to creating out ideas in the physical world using 3D printers and more.',
                 topics : [
                     'Basic geometry',
                     'Design system',
                     'Software introduction',
                     '3D design',
                     'Combination of figures',
-                    'Export and print'
+                    'Export and print',
+                    'Workint with KIT #1'
                 ]
             },
             {
-                name : 'M5 - Introduction to programming',
+                name : 'M5 - Introduction to programming\n\nWe begin to understand the communication language of machines. The way that we can write the orders and commands so that they can respond to our programs.',
                 topics : [
                     'Introduction to programming',
                     'Flowchart',
@@ -127,69 +137,66 @@ var workshops = [
                     'Block programming',
                     'Variables',
                     'Cycles',
-                    'Conditionals'
+                    'Conditionals',
+                    'Practical Exercises'
                 ]
             },
             {
-                name : 'M6 - Advanced programming',
+                name : 'M6 - Programmation advance\n\nWe begin to connect everything around us, the physical part of sensors and actuators with the digital world in such a way that we can generate programs and electronic applications and communicate through different sources.',
                 topics : [
                     'Introduction to C++',
                     'Introduction to Arduino IDE',
                     'Arduino and hardware',
                     'I/O management',
                     'Use of actuators',
-                    'Use of transducers and sensors'
+                    'Use of transducers and sensors',
+                    'Practical Exercises'
                 ]
             },
             {
-                name : 'M7 - Robotics',
+                name : 'M7 - Robotics\n\nWe know about the world of power and about precision control over different control elements which lead us to be able to build more sophisticated solutions already with applications and purposes.',
                 topics : [
                     'Introduction to robotics',
                     'Robotics fundamentals',
                     'Use of DC motors',
                     'Use of servo motors',
-                    'Use of stepper motors'
+                    'Use of stepper motors',
+                    'Project',
+                    'This weekk we will deliver KIT #2 to start getting involved with the elements and put into practice the knowledge acquired.'
                 ]
             },
             {
                 name : 'M8 - Prepare to compete',
                 topics : [
-                    'Bootcamp',
-                    'Build your robot',
-                    'Program your robot'
+                    'Generate a small bootcamp to assure students got their robot build, program and ready to compete.'
                 ]
             },
             {
                 name : 'M9 - Robotics competition',
                 topics : [
-                    'Competition',
-                    'Line-following rover',
-                    'Autonomous rover',
-                    'Light-following rover'
+                    'Create a small competition between students. Competition should make stodents to compete (cooperate & compete). Competition should validate the learning objectives of past modules. Examples: Line-following Rover, Autonomours Rover not bumping into walls, Light-following Rover, etc.'
                 ]
             },
             {
                 name : 'M10 - Electronic applications',
                 topics : [
-                    'Other electronic kits',
-                    'Show students other projects on different platforms',
-                    'Inspire students to build their own electronic solution'
+                    'Motivate students to create their own electronic solution.',
+                    'Explain more projects based on other electronic kits (more robotics, IoT, etc).',
+                    'Show student other projects using YouTube or similar platforms.',
+                    'Inspire students to build their own electronic solution based on intermediate or advanced hardware.',
+                    'This week we will deliver KIT #3.'
                 ]
             },
             {
                 name : 'M11 - Creating your own electronic solution',
                 topics : [
-                    'Bootcamp',
-                    'Build your electronic solution',
-                    'Program your electronic solution'
+                    'Generate a small bootcamp to assure students got their electronic solution build, program and ready to compete.'
                 ]
             },
             {
                 name : 'M12 - Pitch your own electronic solution',
                 topics : [
-                    'Competition',
-                    'Elevator pitch',
-                    'Solve a real proglem in their communities or environment using technology'
+                    'Create an event where students prepare an elevator pitch of their electronic solution. Their technology should solve a real problem in their communities or environment. Research of the best possible solution should have been done by students.'
                 ]
             }
         ]

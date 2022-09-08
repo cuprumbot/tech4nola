@@ -1853,6 +1853,7 @@ body::-webkit-scrollbar {
   /* width: 100%; */
   margin-top: 20px;
   padding: 12px;
+  white-space: pre-line;
 }
 
 .syllabus-table-container .calendar-hidden {
@@ -1916,7 +1917,7 @@ body::-webkit-scrollbar {
    background-color: #69048A;
    position: relative;
    margin: 7.5px 15px;
-   height: 500px;
+   height: 550px;
 }
 
  .slider-container .bullet-container {
@@ -1946,8 +1947,8 @@ body::-webkit-scrollbar {
    left: 50%;
    top: 50%;
    width: 70%;
-   height: 70%;
-   transform: translate(-50%, -55%);
+   height: 65%;
+   transform: translate(-50%, -65%);
 }
  .slider-container .slider-content .slider-single {
    position: absolute;
@@ -1992,8 +1993,9 @@ body::-webkit-scrollbar {
  .slider-container .slider-content .slider-single .slider-single-title {
    display: block;
    float: left;
-   margin: 5px 0 0 20px;
-   font-size: 20px;
+   margin-left: -50px;
+   margin-right: -50px;
+   font-size: 15px;
    font-family: "Arial";
    font-weight: 400;
    color: #fff;
