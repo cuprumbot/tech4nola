@@ -219,6 +219,7 @@
                         html += '<div class ="slider-single">';
                         html += `    <img class="slider-single-image" src="${workshops[element.id].imgs[i]}" alt="${i}" />`;
                         html += `    <h1 class="slider-single-title">${workshops[element.id].captions[i]}</h1>`;
+                        html += `    <h1 class="slider-single-mini">${workshops[element.id].miniCaptions[i]}</h1>`;
                         html += '</div>';
                     }
 
@@ -928,6 +929,7 @@
     /* Se ejecuta cuando carga la página */
     (function($) {
 
+        /*
         var inserted = false;
         staff.forEach((element, index) => {
             inserted = false;
@@ -946,6 +948,8 @@
                 }
             }
         });
+        */
+        orderStaff = staff;
 
         if(window.location.hash) {
             // Remove the # character

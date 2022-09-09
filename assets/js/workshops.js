@@ -82,6 +82,14 @@ var workshops = [
             'KIT 3: Having the modern tools of wireless communications we want to give each student the power to communicate technology with bluetooth and internet technologies for sending and receiving data. We seek that the management of hardware and software go hand in hand in such a way as to generate technological solutions applicable to real life through kits oriented towards automation and intelligent monitoring.',
             'KIT 3: Having the modern tools of wireless communications we want to give each student the power to communicate technology with bluetooth and internet technologies for sending and receiving data. We seek that the management of hardware and software go hand in hand in such a way as to generate technological solutions applicable to real life through kits oriented towards automation and intelligent monitoring.'
         ],
+        miniCaptions : [
+            'KIT 1: Put the theory into practice.',
+            'KIT 1: Put the theory into practice.',
+            'KIT 2: Sensors and actuators.',
+            'KIT 2: Sensors and actuators.',
+            'KIT 3: Automation and intelligent monitoring.',
+            'KIT 3: Automation and intelligent monitoring.'
+        ],
 
         completeSyllabus : [
             {
@@ -174,7 +182,7 @@ var workshops = [
             {
                 name : 'M9 - Robotics competition',
                 topics : [
-                    'Create a small competition between students. Competition should make stodents to compete (cooperate & compete). Competition should validate the learning objectives of past modules. Examples: Line-following Rover, Autonomours Rover not bumping into walls, Light-following Rover, etc.'
+                    'Create a small competition between students. Competition should make students to compete (cooperate & compete). Competition should validate the learning objectives of past modules. Examples: Line-following Rover, Autonomours Rover not bumping into walls, Light-following Rover, etc.'
                 ]
             },
             {
