@@ -1473,7 +1473,7 @@ body::-webkit-scrollbar {
   transform: translateY(-40px);
   transition: 0.4s ease;
   max-width: 900px;
-  width: 90%;
+  width: 96%;
   align-items: center; }
 
   .dynamic-information .section-calendar {
@@ -2072,7 +2072,7 @@ body::-webkit-scrollbar {
    transform: translateX(0px);
 
    position: absolute;
-   bottom: 0;
+   bottom: 5px;
 }
 
  .slider-container .slider-content .slider-single.active .slider-single-mini {
@@ -2081,7 +2081,7 @@ body::-webkit-scrollbar {
    transform: translateX(0px);
 
    position: absolute;
-   bottom: 0;
+   bottom: 5px;
 }
 
  .slider-container .slider-left {
@@ -2110,6 +2110,16 @@ body::-webkit-scrollbar {
    border: 2px solid #22FE9A;
    margin-left: -2px;
 }
+
+@media only screen and (max-width: 600px) {
+  .slider-container .slider-left {
+    padding: 15px 10px;
+  }
+  .slider-container .slider-right {
+    padding: 15px 10px;
+  }
+}
+
  .slider-container .not-visible {
    display: none !important;
 }
